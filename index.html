@@ -4,59 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Be My Valentine?</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: pink;
-            font-family: Arial, sans-serif;
             text-align: center;
+            background-image: url('bouganvil.webp');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
         }
         h1 {
+            color: white;
             font-size: 2em;
+            font-weight: bold;
         }
         .buttons {
             margin-top: 20px;
         }
         button {
-            font-size: 20px;
+            font-size: 16px;
             padding: 10px 20px;
-            margin: 10px;
-            border: none;
+            margin: 5px;
             cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        #yes {
-            background-color: red;
-            color: white;
-            font-size: 20px;
-        }
-        #no {
-            background-color: white;
-            color: red;
-            font-size: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Will you be my Valentine? ❤️</h1>
+    <h1>Tanima, will you be my Valentine? ❤️</h1>
     <div class="buttons" id="buttons-container">
-        <button id="yes" onclick="alert('Yay! ❤️')">Yes</button>
+        <button id="yes" onclick="showLove()">Yes</button>
         <button id="no" onclick="multiplyYes()">No</button>
     </div>
 
     <script>
-       function multiplyYes() {
+        let firstClick = true;
+        function multiplyYes() {
+            if (firstClick) {
+                setTimeout(() => alert("You are breaking my heart GOLDFISH"), 100);
+                firstClick = false;
+            } else {
+                setTimeout(() => alert("Na ah nah"), 100);
+            }
             let yesButton = document.createElement("button");
             yesButton.innerText = "Yes";
             yesButton.onclick = showLove;
             yesButton.style.margin = "5px";
+            yesButton.style.padding = "10px 20px";
+            yesButton.style.fontSize = "16px";
             document.getElementById("buttons-container").appendChild(yesButton);
-            }
+        }
+
+        function showLove() {
+            window.location.href = 'yes.html';
         }
     </script>
 </body>
 </html>
+
