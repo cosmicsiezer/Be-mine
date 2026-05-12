@@ -3,109 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forever Rani</title>
-
+    <title>Forever Valentine</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, #ff9eb5, #ff4f81);
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            text-align: center;
-            font-family: Arial, sans-serif;
+            background-color: pink;
         }
-
-        img {
-            width: 280px;
-            border-radius: 20px;
-            box-shadow: 0 0 25px rgba(255,255,255,0.6);
-            z-index: 2;
-        }
-
         .message {
-            margin-top: 20px;
-            font-size: 2.2em;
+            font-size: 2em;
             font-weight: bold;
-            color: white;
-            text-shadow:
-                0 0 5px #fff,
-                0 0 10px #ff4da6,
-                0 0 20px #ff4da6,
-                0 0 40px #ff1a75;
-            animation: glow 2s infinite alternate;
-            z-index: 2;
-            padding: 10px;
-        }
-
-        @keyframes glow {
-            from {
-                text-shadow:
-                    0 0 5px #fff,
-                    0 0 10px #ff4da6,
-                    0 0 20px #ff4da6;
-            }
-            to {
-                text-shadow:
-                    0 0 10px #fff,
-                    0 0 20px #ff66b3,
-                    0 0 40px #ff1a75,
-                    0 0 60px #ff1a75;
-            }
-        }
-
-        .heart {
-            position: absolute;
-            color: rgba(255,255,255,0.8);
-            font-size: 20px;
-            animation: float 6s linear infinite;
-            bottom: -50px;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(-110vh) rotate(360deg);
-                opacity: 0;
-            }
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-
-    <img src="cateyes.jpg" alt="Love You Cat">
-
-    <div class="message">
-        Gonna cherish you forever MOHA RANI ❤️
-    </div>
-
-    <script>
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.innerHTML = "❤️";
-
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.fontSize = Math.random() * 20 + 20 + "px";
-            heart.style.animationDuration = Math.random() * 3 + 3 + "s";
-
-            document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 6000);
-        }
-
-        setInterval(createHeart, 300);
-    </script>
-
+    <img src="https://media.giphy.com/media/l3vR5t3o3te5AT3gk/giphy.gif" alt="Cute Cat">
+    <div class="message">You are my forever Valentine! ❤️</div>
 </body>
 </html>
