@@ -9,36 +9,50 @@
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #ff9eb5, #ff4f81);
+            height: 100vh;
             overflow: hidden;
+
+            background: url('lilies.jpg') no-repeat center center/cover;
+
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            height: 100vh;
+
             text-align: center;
             font-family: Arial, sans-serif;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 105, 180, 0.25);
+            backdrop-filter: blur(2px);
+            z-index: 0;
         }
 
         img {
             width: 280px;
             border-radius: 20px;
-            box-shadow: 0 0 25px rgba(255,255,255,0.6);
+            box-shadow: 0 0 25px rgba(255,255,255,0.7);
             z-index: 2;
         }
 
         .message {
             margin-top: 20px;
-            font-size: 2.2em;
+            font-size: 2.3em;
             font-weight: bold;
             color: white;
+            z-index: 2;
+
             text-shadow:
                 0 0 5px #fff,
                 0 0 10px #ff4da6,
                 0 0 20px #ff4da6,
                 0 0 40px #ff1a75;
+
             animation: glow 2s infinite alternate;
-            z-index: 2;
             padding: 10px;
         }
 
@@ -49,6 +63,7 @@
                     0 0 10px #ff4da6,
                     0 0 20px #ff4da6;
             }
+
             to {
                 text-shadow:
                     0 0 10px #fff,
@@ -60,10 +75,11 @@
 
         .heart {
             position: absolute;
-            color: rgba(255,255,255,0.8);
+            bottom: -50px;
+            color: rgba(255,255,255,0.85);
             font-size: 20px;
             animation: float 6s linear infinite;
-            bottom: -50px;
+            z-index: 1;
         }
 
         @keyframes float {
@@ -79,9 +95,10 @@
         }
     </style>
 </head>
+
 <body>
 
-    <img src="cateyes.jpg" alt="Love You Cat">
+    <img src="cateyes.jpg" alt="Cute Cat Eyes">
 
     <div class="message">
         Gonna cherish you forever MOHA RANI ❤️
@@ -90,12 +107,13 @@
     <script>
         function createHeart() {
             const heart = document.createElement("div");
+
             heart.classList.add("heart");
             heart.innerHTML = "❤️";
 
             heart.style.left = Math.random() * 100 + "vw";
-            heart.style.fontSize = Math.random() * 20 + 20 + "px";
-            heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+            heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+            heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
 
             document.body.appendChild(heart);
 
@@ -109,5 +127,4 @@
 
 </body>
 </html>
-
 
