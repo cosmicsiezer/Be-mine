@@ -3,61 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>May you be mine?</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Forever Rani</title>
+
     <style>
         body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ff9eb5, #ff4f81);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
             text-align: center;
-            background-image: url('lilies.jpg');
-            background-size: cover;
-            background-position: center;
             font-family: Arial, sans-serif;
         }
-        h1 {
-            color: white;
-            font-size: 2em;
-            font-weight: bold;
+
+        img {
+            width: 280px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(255,255,255,0.6);
+            z-index: 2;
         }
-        .buttons {
+
+        .message {
             margin-top: 20px;
+            font-size: 2.2em;
+            font-weight: bold;
+            color: white;
+            text-shadow:
+                0 0 5px #fff,
+                0 0 10px #ff4da6,
+                0 0 20px #ff4da6,
+                0 0 40px #ff1a75;
+            animation: glow 2s infinite alternate;
+            z-index: 2;
+            padding: 10px;
         }
-        button {
-            font-size: 16px;
-            padding: 10px 20px;
-            margin: 5px;
-            cursor: pointer;
+
+        @keyframes glow {
+            from {
+                text-shadow:
+                    0 0 5px #fff,
+                    0 0 10px #ff4da6,
+                    0 0 20px #ff4da6;
+            }
+            to {
+                text-shadow:
+                    0 0 10px #fff,
+                    0 0 20px #ff66b3,
+                    0 0 40px #ff1a75,
+                    0 0 60px #ff1a75;
+            }
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255,255,255,0.8);
+            font-size: 20px;
+            animation: float 6s linear infinite;
+            bottom: -50px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <h1> SHITHI HOSSAIN YOU ARE ADORED BEYOND WORDS ;) BE MINE!!!???❤️</h1>
-    <div class="buttons" id="buttons-container">
-        <button id="yes" onclick="showLove()">Yes</button>
-        <button id="no" onclick="multiplyYes()">No</button>
+
+    <img src="images.jpeg" alt="Love You Cat">
+
+    <div class="message">
+        Gonna cherish you forever MOHA RANI ❤️
     </div>
 
     <script>
-        let firstClick = true;
-        function multiplyYes() {
-            if (firstClick) {
-                setTimeout(() => alert("You are breaking my heart MOHA RANI"), 100);
-                firstClick = false;
-            } else {
-                setTimeout(() => alert("Na hobena hobena"), 100);
-            }
-            let yesButton = document.createElement("button");
-            yesButton.innerText = "Yes";
-            yesButton.onclick = showLove;
-            yesButton.style.margin = "5px";
-            yesButton.style.padding = "10px 20px";
-            yesButton.style.fontSize = "16px";
-            document.getElementById("buttons-container").appendChild(yesButton);
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = Math.random() * 20 + 20 + "px";
+            heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
         }
 
-        function showLove() {
-            window.location.href = 'yes.html';
-        }
+        setInterval(createHeart, 300);
     </script>
+
 </body>
 </html>
 
